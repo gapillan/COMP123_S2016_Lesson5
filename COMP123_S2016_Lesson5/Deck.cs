@@ -116,5 +116,21 @@ namespace COMP123_S2016_Lesson5
                 this[randomCard] = tempCard; // copy current card to the random card
             }
         }
+
+        /**
+         * <summary> 
+         * This method will remove the 0th item from the deck and reutrn it to the caller
+         * </summary>
+         * 
+         * @method Deal 
+         * @returns {Card}
+         */
+        public Card Deal()
+        {
+            Card returnedCard = this[0]; // copy the 0th card in the stack to the returnedCard 
+
+            this.RemoveAt(0); // remove the 0th Card from deck 
+            return returnedCard;
+        }
     }
 }
