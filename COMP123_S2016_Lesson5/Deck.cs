@@ -7,33 +7,27 @@ using System.Threading.Tasks;
 namespace COMP123_S2016_Lesson5
 {
     /**
-     * This class is the "driver" class for our Program 
+     * <summary>
+     * This class extends the List<Card> generic type
+     * </summary> 
      * 
-     * @class Program 
+     * @class Deck 
      */
-
-    public class Program
+    public class Deck : List<Card>
     {
+        //CONSTRUCTORS 
         /**
-         * The main method of our driver class Program 
+         * <summary>
+         * this is the default constructor for the deck class 
+         * </summary>
          * 
-         * @method Main 
-         * @param {string[]} args
+         * @constructor Deck 
          */
-        public static void Main(string[] args)
+        public Deck()
         {
-            // List that represents deck of cards
-            List<Card> Deck = new List<Card>();
-
-            CreateDeck(Deck);
-            DisplayDeck(Deck); // display initial state of deck 
-
-
-            ShuffleDeck(Deck);
-            DisplayDeck(Deck);// display the shuffled state of deck 
-
-        } // end Main
-
+       
+        
+        }
         // PUBLIC STATIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         /**
@@ -45,7 +39,7 @@ namespace COMP123_S2016_Lesson5
          * @param {List<Card>} deck
          * @returns {void}
          */
-        public static void CreateDeck(List<Card> deck)
+        private void _create()
         {
             string suit = "";
 
@@ -70,7 +64,7 @@ namespace COMP123_S2016_Lesson5
 
                 for (int face = 1; face < 14; face++)
                 {
-                    deck.Add(new Card(face, suit));
+                    this.Add(new Card(face, suit));
                 } // end for - face 
             }
         }
@@ -84,12 +78,12 @@ namespace COMP123_S2016_Lesson5
          * @param (List<card>) deck 
          * @returns {void}
          */
-        public static void DisplayDeck(List<Card> deck) 
+        public void Display() 
         {
             Console.WriteLine("++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("+            Current Deck          +");
             Console.WriteLine("++++++++++++++++++++++++++++++++++++");
-            foreach (Card card in deck) 
+            foreach (Card card in this) 
             {
                 Console.WriteLine("{0} of {1}", card.Face, card.Suit);
             }
@@ -97,23 +91,22 @@ namespace COMP123_S2016_Lesson5
             Console.WriteLine();
         }
 
-        public static void ShuffleDeck(List<Card> deck) 
+        public void Shuffle() 
         {
             // creates a psuedo-random number sequence and stores it in random 
             Random random = new Random(); 
             // recod the number of cards in the deck list 
-            int cardCount = deck.Count;
+            int cardCount = this.Count;
 
             Console.WriteLine("Card Count: {0}", cardCount); // displays the total amount of the deck
 
             // iterate through the list of cards || note: this is also known as an SWAPPING DATA ALGORITHM 
             for (int currentCard = 0; currentCard < cardCount; currentCard++) 
             {
-                Card tempCard = deck[currentCard]; // copy curretnt card to temp location 
+                Card tempCard = this[currentCard]; // copy curretnt card to temp location 
                 int randomCard = random.Next(0, cardCount); // get a random index
-                deck[currentCard] = deck[randomCard]; // swap values from randomCard to currentCard
-                deck[randomCard] = tempCard; // copy current card to the random card
+                this[currentCard] = this[randomCard]; // swap values from randomCard to currentCard
+                this[randomCard] = tempCard; // copy current card to the random card
             }
-        }
-    } // end Program 
-} // end namespace 
+    }
+}
