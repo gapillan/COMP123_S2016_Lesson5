@@ -22,67 +22,91 @@ namespace COMP123_S2016_Lesson5
          */
         public static void Main(string[] args)
         {
-            // create a new variable class called MyList
-
-            //MyList myList = new MyList();
-
-            //myList.Add(1);
-            //myList.Add(5);
-            //myList.Clear();
-            //myList.Print();
-            Console.WriteLine();
-
-            // List that represent the deck of cards || creating a string type list 
-
-            List<string> names = new List<string>();
-
-            names.Add("Tom");
-            names.Add("Mary");
-            names.Add("Jerry");
-
-
-            int count = 0;
-            Console.WriteLine();
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++");
-            foreach (string name in names)
-            {
-                Console.WriteLine("Name#" + count + " is " + name);
-                count++;
-            }
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++");
-
-            // creating a Deck list 
-
+            // List that represents deck of cards
             List<Card> Deck = new List<Card>();
 
             CreateDeck(Deck);
-        }
+            DisplayDeck(Deck);
 
-        public static void CreateDeck(List<Card> deck) 
+
+        } // end Main
+
+        // PUBLIC STATIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        /**
+         * <summary>
+         * This method loads a list of cards with Card objects
+         * </summary>
+         * 
+         * @method CreateDeck
+         * @param {List<Card>} deck
+         * @returns {void}
+         */
+        public static void CreateDeck(List<Card> deck)
         {
-            string suit;
+            string suit = "";
 
-            for (int i = 1; i < 4; i++)
-			{
-			 switch(i) 
-             {
-                 case 0;
-                     suit = "hearts";
-                     break;
-                     case 1;
-                     suit = "clubs";
-                     break;
-                     suit = "Diamonds";
-                     break;
-                     suit = "Spades";
-                     break;
-
-             }
-			}
-            for (int index = 1; index < 14; index++) 
+            for (int suitIndex = 0; suitIndex < 4; suitIndex++)
             {
-                deck.Add(new Card(index, string ));
+                switch (suitIndex)
+                {
+                    case 0:
+                        suit = "hearts";
+                        break;
+                    case 1:
+                        suit = "clubs";
+                        break;
+                    case 2:
+                        suit = "diamonds";
+                        break;
+                    case 3:
+                        suit = "spades";
+                        break;
+
+                } // end suit switch
+
+                for (int face = 1; face < 14; face++)
+                {
+                    deck.Add(new Card(face, suit));
+                } // end for - face 
             }
         }
-    }
-}
+
+        /**
+         * <summary>
+         * This method displays a list of Card objects to the console 
+         * </summary>
+         * 
+         * @method DisplayDeck 
+         * @param (List<card>) deck 
+         * @returns {void}
+         */
+        public static void DisplayDeck(List<Card> deck) 
+        {
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("+            Current Deck          +");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++");
+            foreach (Card card in deck) 
+            {
+                Console.WriteLine("{0} of {1}", card.Face, card.Suit);
+            }
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine();
+        }
+
+        public static void ShuffleDeck(List<Card> deck) 
+        {
+            // creates a psuedo-random number sequence and stores it in random 
+            Random random = new Random(); 
+            // recod the number of cards in the deck list 
+            int cardCount = deck.Count;
+
+            // iterate through the list of cards
+            for (int currentCard = 0; currentCard < cardCount; currentCard++) 
+            {
+                Card tempCard = deck[currentCard]; // copy curretnt card to temp location 
+                int randomCard = random.Next(0, cardCount); // get a random index
+            }
+        }
+    } // end Program 
+} // end namespace 
