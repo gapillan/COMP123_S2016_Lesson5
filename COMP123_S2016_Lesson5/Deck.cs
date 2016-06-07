@@ -25,17 +25,18 @@ namespace COMP123_S2016_Lesson5
          */
         public Deck()
         {
-       
-        
+            // create the deck of cards 
+            this._create();
         }
-        // PUBLIC STATIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         /**
          * <summary>
          * This method loads a list of cards with Card objects
          * </summary>
          * 
-         * @method CreateDeck
+         * @private
+         * @method _create
          * @param {List<Card>} deck
          * @returns {void}
          */
@@ -74,16 +75,16 @@ namespace COMP123_S2016_Lesson5
          * This method displays a list of Card objects to the console 
          * </summary>
          * 
-         * @method DisplayDeck 
+         * @method Display
          * @param (List<card>) deck 
          * @returns {void}
          */
-        public void Display() 
+        public void Display()
         {
             Console.WriteLine("++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("+            Current Deck          +");
             Console.WriteLine("++++++++++++++++++++++++++++++++++++");
-            foreach (Card card in this) 
+            foreach (Card card in this)
             {
                 Console.WriteLine("{0} of {1}", card.Face, card.Suit);
             }
@@ -91,22 +92,29 @@ namespace COMP123_S2016_Lesson5
             Console.WriteLine();
         }
 
-        public void Shuffle() 
+        /**
+         * this mehtod randomly shuffles a List of Card objects 
+         * 
+         * @method shuffle 
+         * @returns {void}
+         */
+        public void Shuffle()
         {
             // creates a psuedo-random number sequence and stores it in random 
-            Random random = new Random(); 
+            Random random = new Random();
             // recod the number of cards in the deck list 
             int cardCount = this.Count;
 
             Console.WriteLine("Card Count: {0}", cardCount); // displays the total amount of the deck
 
             // iterate through the list of cards || note: this is also known as an SWAPPING DATA ALGORITHM 
-            for (int currentCard = 0; currentCard < cardCount; currentCard++) 
+            for (int currentCard = 0; currentCard < cardCount; currentCard++)
             {
                 Card tempCard = this[currentCard]; // copy curretnt card to temp location 
                 int randomCard = random.Next(0, cardCount); // get a random index
                 this[currentCard] = this[randomCard]; // swap values from randomCard to currentCard
                 this[randomCard] = tempCard; // copy current card to the random card
             }
+        }
     }
 }
