@@ -29,6 +29,12 @@ namespace COMP123_S2016_Lesson5
 
             deck.Shuffle(); // shuffle the deck 
             deck.Display(); // display the deck after shuffling 
+
+            Card cardDelt = deck.Deal();
+            Console.WriteLine("Card Delt: {0} of {1}", cardDelt.Face, cardDelt.Suit);
+
+            deck.Display();
+            
         }
     } // end Program 
 } // end namespace 
