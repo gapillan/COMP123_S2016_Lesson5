@@ -7,6 +7,18 @@ namespace COMP123_S2016_Lesson5
 {
     public enum Faces
     {
-        Two = 2
+        Two = 2, 
+        Three, 
+        Four, 
+        Five, 
+        Six, 
+        Seven,
+        Eight, 
+        Nine, 
+        Ten, 
+        Jack, 
+        Queen, 
+        King, 
+        Ace
     }
 }

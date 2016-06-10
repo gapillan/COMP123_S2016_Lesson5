@@ -15,23 +15,23 @@
     </TypeIdentifier>
   </Class>
   <Class Name="COMP123_S2016_Lesson5.Program">
-    <Position X="4.75" Y="1.25" Width="2" />
+    <Position X="4.5" Y="1.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="COMP123_S2016_Lesson5.Suits">
-    <Position X="4.5" Y="3" Width="1.5" />
+    <Position X="2.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAEAAAAAAAAABAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Suits.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="COMP123_S2016_Lesson5.Faces">
-    <Position X="2.75" Y="4" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAAAAAAggAAAEAAEAIAAAAAFBAAAAAgAAAgAAEE=</HashCode>
       <FileName>Faces.cs</FileName>
     </TypeIdentifier>
   </Enum>
