@@ -42,10 +42,22 @@ namespace COMP123_S2016_Lesson5
          */
         private void _create()
         {
-            string suit = "";
+            foreach (Suits suit in Enum.GetValues(typeof(Suits)))
+	{
+		 foreach (Faces face in Enum.GetValues(typeof(Faces)))
+	{
+		 this.Add(new Card(face, suit));
+	}
+	}
+
+
+
+
+           /* string suit = "";
 
             for (int suitIndex = 0; suitIndex < 4; suitIndex++)
             {
+                
                 switch (suitIndex)
                 {
                     case 0:
@@ -66,7 +78,7 @@ namespace COMP123_S2016_Lesson5
                 for (int face = 1; face < 14; face++)
                 {
                     this.Add(new Card(face, suit));
-                } // end for - face 
+                } // end for - face */
             }
         }
 
