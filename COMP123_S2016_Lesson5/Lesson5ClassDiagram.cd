@@ -35,12 +35,5 @@
       <FileName>Faces.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="COMP123_S2016_Lesson5.PlayerStates">
-    <Position X="4.25" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAABAAAAIAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAI=</HashCode>
-      <FileName>PlayerStates.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
