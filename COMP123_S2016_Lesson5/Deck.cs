@@ -43,15 +43,11 @@ namespace COMP123_S2016_Lesson5
         private void _create()
         {
             foreach (Suits suit in Enum.GetValues(typeof(Suits)))
-	{
-		 foreach (Faces face in Enum.GetValues(typeof(Faces)))
-	{
-		 this.Add(new Card(face, suit));
-	}
-	}
-
-
-
+	        {
+		        foreach (Faces face in Enum.GetValues(typeof(Faces)))
+	            {
+		            this.Add(new Card(face, suit)); // anonymous Card object to the list 
+	            }
 
            /* string suit = "";
 
@@ -80,7 +76,7 @@ namespace COMP123_S2016_Lesson5
                     this.Add(new Card(face, suit));
                 } // end for - face */
             }
-        }
+        } // end of _create 
 
         /**
          * <summary>
